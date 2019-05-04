@@ -12,7 +12,7 @@ import com.xuexiang.xnobug.core.model.DeviceStatusInfo;
  * @author xuexiang
  * @since 2019-05-04 17:09
  */
-public interface InformationCollector {
+public interface IInformationCollector {
 
     /**
      * 收集设备信息

@@ -5,7 +5,7 @@ import android.content.Context;
 import com.xuexiang.xnobug.core.model.AppInfo;
 import com.xuexiang.xnobug.core.model.DeviceInfo;
 import com.xuexiang.xnobug.core.model.DeviceStatusInfo;
-import com.xuexiang.xnobug.core.proxy.InformationCollector;
+import com.xuexiang.xnobug.core.proxy.IInformationCollector;
 import com.xuexiang.xnobug.utils.AppUtils;
 import com.xuexiang.xnobug.utils.DeviceUtils;
 
@@ -15,7 +15,7 @@ import com.xuexiang.xnobug.utils.DeviceUtils;
  * @author xuexiang
  * @since 2019-05-04 17:50
  */
-public class DefaultInformationCollectorImpl implements InformationCollector {
+public class DefaultInformationCollectorImpl implements IInformationCollector {
 
     private DeviceInfo mDeviceInfo;
 
