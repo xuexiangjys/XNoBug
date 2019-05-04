@@ -19,3 +19,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly deps.support.app_compat
 }
+
+
+apply from: "../JitPackUpload.gradle"
+

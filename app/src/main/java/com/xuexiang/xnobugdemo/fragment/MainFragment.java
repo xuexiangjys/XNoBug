@@ -12,14 +12,14 @@ import com.xuexiang.xutil.common.ClickUtils;
  * @author xuexiang
  * @since 2018/11/7 下午1:16
  */
-@Page(name = "XNoBug日志收集")
+@Page(name = "XNoBug日志上报")
 public class MainFragment extends XPageContainerListFragment {
 
     @Override
     protected Class[] getPagesClasses() {
         return new Class[] {
                 //此处填写fragment
-
+                TestFragment.class
         };
     }
 
