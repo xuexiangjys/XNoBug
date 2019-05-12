@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import com.xuexiang.xnobug.core.model.AppInfo;
+import com.xuexiang.xnobug.core.model.ErrorInfo;
 
 /**
  * 应用工具类
@@ -69,7 +70,7 @@ public final class AppUtils {
         try {
             ApplicationInfo ai = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             if (ai.metaData != null) {
-                for (String key: ai.metaData.keySet()) {
+                for (String key : ai.metaData.keySet()) {
                     if (!TextUtils.isEmpty(key) && key.contains(keyName)) {
                         return String.valueOf(ai.metaData.get(key));
                     }
@@ -111,4 +112,29 @@ public final class AppUtils {
         }
         return null;
     }
+
+    /**
+     * 获取错误信息
+     *
+     * @param throwable
+     * @return
+     */
+    public static ErrorInfo getErrorInfo(Throwable throwable) {
+        ErrorInfo info = new ErrorInfo();
+        info.errorTime = System.currentTimeMillis();
+        if (throwable.getCause() != null) {
+            throwable = throwable.getCause();
+        }
+        info.errorSummary = throwable.getMessage();
+        if (throwable.getStackTrace() != null && throwable.getStackTrace().length > 0) {
+            StackTraceElement element = throwable.getStackTrace()[0];
+            info.className = element.getClassName();
+            info.lineNumber = element.getLineNumber();
+            info.methodName = element.getMethodName();
+            info.errorType = throwable.getClass().getName();
+        }
+        info.threadName = Thread.currentThread().getName();
+        return info;
+    }
+
 }

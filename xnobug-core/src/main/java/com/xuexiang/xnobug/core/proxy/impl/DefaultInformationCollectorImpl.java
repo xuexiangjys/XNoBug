@@ -5,6 +5,7 @@ import android.content.Context;
 import com.xuexiang.xnobug.core.model.AppInfo;
 import com.xuexiang.xnobug.core.model.DeviceInfo;
 import com.xuexiang.xnobug.core.model.DeviceStatusInfo;
+import com.xuexiang.xnobug.core.model.ErrorInfo;
 import com.xuexiang.xnobug.core.proxy.IInformationCollector;
 import com.xuexiang.xnobug.utils.AppUtils;
 import com.xuexiang.xnobug.utils.DeviceUtils;
@@ -58,5 +59,16 @@ public class DefaultInformationCollectorImpl implements IInformationCollector {
     @Override
     public DeviceStatusInfo getDeviceStatusInfo(Context context) {
         return DeviceUtils.getDeviceStatusInfo(context);
+    }
+
+    /**
+     * 收集错误信息
+     *
+     * @param throwable 错误
+     * @return
+     */
+    @Override
+    public ErrorInfo getErrorInfo(Throwable throwable) {
+        return AppUtils.getErrorInfo(throwable);
     }
 }

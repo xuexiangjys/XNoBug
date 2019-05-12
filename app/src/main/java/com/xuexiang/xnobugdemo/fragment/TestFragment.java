@@ -39,6 +39,11 @@ public class TestFragment extends XPageSimpleListFragment {
                 Log.e("xuexiang", info.getAppInfo(getContext()).toString());
                 Log.e("xuexiang", info.getDeviceInfo(getContext()).toString());
                 Log.e("xuexiang", info.getDeviceStatusInfo(getContext()).toString());
+                try {
+                    int a = 12 / 0;
+                } catch (Exception e) {
+                    Log.e("xuexiang", info.getErrorInfo(e).toString());
+                }
                 break;
             case 1:
 
