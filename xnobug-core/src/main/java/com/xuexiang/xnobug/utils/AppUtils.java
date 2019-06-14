@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
+import com.xuexiang.xnobug.XNoBug;
 import com.xuexiang.xnobug.core.model.AppInfo;
 import com.xuexiang.xnobug.core.model.ErrorInfo;
 
@@ -31,10 +32,10 @@ public final class AppUtils {
     public static AppInfo getAppInfo(@NonNull Context context) {
         AppInfo info = new AppInfo();
         info.packageName = context.getPackageName();
-        info.versionName = getVersionName(context);
-        info.versionCode = getVersionCode(context);
+        info.versionName = XNoBug.getIXNoBugStrategy().getVersionName(context);
+        info.versionCode = XNoBug.getIXNoBugStrategy().getVersionCode(context);
         //模糊查询渠道号的值
-        info.channel = getFitMetaDataInApp(context, "CHANNEL");
+        info.channel = XNoBug.getIXNoBugStrategy().getAppChannel(context);
         return info;
     }
 

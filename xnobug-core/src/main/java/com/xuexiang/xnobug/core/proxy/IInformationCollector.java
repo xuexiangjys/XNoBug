@@ -8,7 +8,7 @@ import com.xuexiang.xnobug.core.model.DeviceStatusInfo;
 import com.xuexiang.xnobug.core.model.ErrorInfo;
 
 /**
- * 信息收集者【收集设备信息、设备状态信息、应用信息】
+ * 信息收集者【收集设备信息、设备状态信息、应用信息】的实现接口
  *
  * @author xuexiang
  * @since 2019-05-04 17:09

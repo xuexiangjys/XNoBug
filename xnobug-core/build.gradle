@@ -18,6 +18,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly deps.support.app_compat
+
+    //日志库
+    compileOnly 'com.github.xuexiangjys.XLog:xlog-core:1.2.1'
 }
 
 

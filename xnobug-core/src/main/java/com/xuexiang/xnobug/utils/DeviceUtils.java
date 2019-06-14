@@ -40,7 +40,7 @@ public final class DeviceUtils {
     /**
      * 获取设备信息
      *
-     * @return AndroidID
+     * @return 设备信息
      */
     @SuppressLint("HardwareIds")
     public static DeviceInfo getDeviceInfo(@NonNull Context context) {

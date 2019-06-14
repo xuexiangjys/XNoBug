@@ -7,12 +7,21 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 提供文件上传功能
+ * 提供网络请求功能的实现接口
  *
  * @author xuexiang
  * @since 2019-05-04 23:05
  */
-public interface IUploadHttpService {
+public interface IHttpService {
+
+    /**
+     * 异步post
+     *
+     * @param url      post请求地址
+     * @param params   post请求参数
+     * @param callBack 回调
+     */
+    void asyncPost(@NonNull String url, @NonNull Map<String, Object> params, @NonNull Callback callBack);
 
     /**
      * 异步上传（单文件）
