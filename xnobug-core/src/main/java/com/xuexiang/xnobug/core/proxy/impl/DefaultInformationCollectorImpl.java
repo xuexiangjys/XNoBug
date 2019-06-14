@@ -23,7 +23,7 @@ public class DefaultInformationCollectorImpl implements IInformationCollector {
     private AppInfo mAppInfo;
 
     /**
-     * 收集设备信息
+     * 收集设备信息【基本不会变】
      *
      * @param context
      * @return
@@ -37,7 +37,7 @@ public class DefaultInformationCollectorImpl implements IInformationCollector {
     }
 
     /**
-     * 收集应用信息
+     * 收集应用信息【基本不会变】
      *
      * @param context
      * @return

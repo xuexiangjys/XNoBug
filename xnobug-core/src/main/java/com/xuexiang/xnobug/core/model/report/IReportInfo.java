@@ -15,27 +15,11 @@
  *
  */
 
-package com.xuexiang.xnobug.core.proxy.impl;
-
-import android.content.Context;
-
-import com.xuexiang.xnobug.core.proxy.IBugRecorder;
+package com.xuexiang.xnobug.core.model.report;
 
 /**
- * 默认Bug/错误信息记录者
- *
  * @author xuexiang
- * @since 2019-06-14 18:09
+ * @since 2019-05-14 00:43
  */
-public class DefaultBugRecorderImpl implements IBugRecorder {
-
-    @Override
-    public void recordCrash(Context context, Throwable throwable) {
-
-    }
-
-    @Override
-    public void recordError(Context context, Throwable throwable) {
-
-    }
+public interface IReportInfo {
 }
